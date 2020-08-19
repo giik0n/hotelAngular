@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settlements List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/7158ac61f7.js"></script>
+
+</head>
+<body>
+<div style="background-color: rgba(57,61,65,1)">
+  <a href="/"><img src="https://img.icons8.com/fluent/48/000000/back.png"/></a>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Room </th>
+        <th>Check In Date</th>
+        <th>Check Out Name</th>
+        <th>Comment</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let settlement of settlements">
+        <td>{{settlement.client.name}}</td>
+        <td>{{settlement.room.roomNumber}}</td>
+        <td>{{settlement.checkInDate}}</td>
+        <td>{{settlement.checkOutDate}}</td>
+        <td>{{settlement.comment}}</td>
+<!--
+        <td><a [routerLink]="['/client-edit', client.id]">Edit</a></td>
+-->
+    </tr>
+    </tbody>
+  </table>
+  <button routerLink="/client-add">Add Client</button>
+</div>
+</body>
+
+</html>
+
+
